@@ -39,8 +39,8 @@ class SpotController extends Controller
 
         if ($request->hasFile('file')) {
             // $request->image->store();
-            $fileName = $request->file($request['id']);
-            $path = $request->file->store("images");
+            $fileName = $request->file("file");
+            $path = $request->file->store("public/images");
             $spot->image = $path;
 
 
@@ -53,7 +53,7 @@ class SpotController extends Controller
         $spot->longitude = $data['longitude'];
         $spot->circuit_id = $data['circuit_id'];
         $spot->save();
-
+        return json_encode($spot);
 
     }
 

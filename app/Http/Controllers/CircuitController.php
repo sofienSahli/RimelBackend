@@ -22,7 +22,7 @@ class CircuitController extends Controller
             $c->spots = $spot;
         }
 
-        return response()->json(['circuits' => $circuits]);
+        return response()->json( $circuits);
 
     }
 
