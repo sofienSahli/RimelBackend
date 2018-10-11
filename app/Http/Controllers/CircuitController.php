@@ -18,7 +18,7 @@ class CircuitController extends Controller
     {
         $circuits = Circuit::all();
         foreach ($circuits as $c) {
-            $spot = Spot::where("circuit_id", $c->id)->simplePaginate();
+            $spot = Spot::where("circuit_id", $c->id)->get();
             $c->spots = $spot;
         }
 
