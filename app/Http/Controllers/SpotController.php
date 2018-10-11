@@ -40,7 +40,7 @@ class SpotController extends Controller
         if ($request->hasFile('file')) {
             // $request->image->store();
             $fileName = $request->file("file");
-            $path = $request->file->store("public/images");
+            $path = $request->file->store("storage/images");
             $spot->image = $path;
 
 
